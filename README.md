@@ -146,32 +146,4 @@ localStorage.setItem('theme', 'dark')
 ou use uma extensão como:
 
 * Live Server (VS Code)
-
----
-
-## 💡 Melhorias futuras
-
-* 🔽 Ordenação por preço (crescente/decrescente)
-* ⭐ Sistema de estrelas visual (★★★★★)
-* 🛒 Carrinho de compras
-* 🔐 Login de usuário
-* 🌍 Tradução de categorias
-
----
-
-## 📸 Preview
-
-(Adicione aqui prints do projeto se quiser)
-
----
-
-## 🧑‍💻 Autor
-
-Feito por você 😎
-(com uma ajudinha do ChatGPT)
-
----
-
-## 📄 Licença
-
-Projeto livre para estudos.
+* 
