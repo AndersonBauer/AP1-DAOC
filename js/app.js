@@ -3,18 +3,15 @@ import { getFavorites, toggleFavorite } from './storage.js';
 import { ProductCard } from './components/card.js';
 import { Header } from './components/header.js';
 
-// HEADER
 const headerContainer = document.getElementById('header-container');
 headerContainer.innerHTML = Header();
 
-// Estado
 let allProducts = [];
 let currentView = 'home';
 
 const contentContainer = document.getElementById('content');
 const loadingElement = document.getElementById('loading');
 
-// 🌙 DARK MODE
 function setupTheme() {
     const btn = document.getElementById('theme-toggle');
     const savedTheme = localStorage.getItem('theme');
@@ -34,7 +31,6 @@ function setupTheme() {
     });
 }
 
-// 🔥 NOVO — POPULAR CATEGORIAS
 function populateCategories() {
     const select = document.getElementById('category-filter');
 
@@ -48,19 +44,17 @@ function populateCategories() {
     });
 }
 
-// INIT
 async function init() {
     loadingElement.style.display = 'block';
     allProducts = await getProducts();
     loadingElement.style.display = 'none';
     
-    populateCategories(); // 👈 AQUI
+    populateCategories();
     render();
     setupEventListeners();
     setupTheme();
 }
 
-// RENDER
 function render(list = null) {
     contentContainer.innerHTML = '';
 
@@ -92,7 +86,6 @@ function render(list = null) {
     });
 }
 
-// 🔥 FILTROS COMPLETOS
 function applyFilters() {
     const term = document.getElementById('search-input')?.value.toLowerCase() || '';
     const min = parseFloat(document.getElementById('min-price')?.value) || 0;
@@ -114,7 +107,6 @@ function applyFilters() {
     render(filtered);
 }
 
-// EVENTOS
 function setupEventListeners() {
     document.getElementById('nav-home').addEventListener('click', (e) => {
         e.preventDefault();
@@ -133,7 +125,6 @@ function setupEventListeners() {
     document.getElementById('max-price')?.addEventListener('input', applyFilters);
     document.getElementById('rating-filter')?.addEventListener('change', applyFilters);
 
-    // 🔥 NOVO
     document.getElementById('category-filter')?.addEventListener('change', applyFilters);
 }
 

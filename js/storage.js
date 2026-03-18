@@ -5,9 +5,9 @@ export const toggleFavorite = (product) => {
     const index = favs.findIndex(item => item.id === product.id);
     
     if (index > -1) {
-        favs.splice(index, 1); // Remove se já existir
+        favs.splice(index, 1); 
     } else {
-        favs.push(product); // Adiciona se não existir
+        favs.push(product); 
     }
     
     localStorage.setItem('favs', JSON.stringify(favs));

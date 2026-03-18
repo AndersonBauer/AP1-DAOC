@@ -27,7 +27,7 @@ export function Header() {
                         <option value="2">⭐ 2+</option>
                     </select>
 
-                    <!-- 🔥 NOVO -->
+                    <!--  NOVO -->
                     <select id="category-filter">
                         <option value="">Categoria</option>
                     </select>
